@@ -28,8 +28,9 @@ public class DefaultProvider implements CameraProvider {
 
 	@Override
 	public CameraDevice get(Logger logger) {
-		return sdkInfo.isBellowLollipop()
-				? v1Provider.get(logger)
-				: v2Provider.get(logger);
+//		return sdkInfo.isBellowLollipop()
+//				? v1Provider.get(logger)
+//				: v2Provider.get(logger);
+        return v2Provider.get(logger);
 	}
 }
