@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'io.fotoapparat'
+
+android {
+    buildToolsVersion project.buildToolsVersion
+    compileSdkVersion Integer.parseInt(project.compileSdkVersion)
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(project.minSdkVersion)
+        targetSdkVersion Integer.parseInt(project.targetSdkVersion)
+
+        archivesBaseName = 'adapter-rxjava'
+    }
+}
+
+dependencies {
+    compile project(':fotoapparat')
+    provided "io.reactivex:rxjava:${project.rxjava1Version}"
+
+    testCompile "junit:junit:${project.junitVersion}"
+}
